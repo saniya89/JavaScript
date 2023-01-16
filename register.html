@@ -1,0 +1,50 @@
+<html>
+<head></head>
+<title>Register Form</title>
+<body>
+	<script>
+		function myfun()
+		{
+			var name=document.form1.fname.value;
+			var password=document.form1.password.value;
+			var mpassword=document.form1.cpassword.value;
+			if (name==null || name=="")
+			{
+				document.getElementById("three").innerHTML="Enter the UserName";
+				return false;
+			
+			}
+			 else if(password.length<6)
+			 {
+			 	document.getElementById("two").innerHTML="Enter the password";
+				return false;
+			 }
+			 else if(mpassword!=password)
+			 {
+			 	document.getElementById("one").innerHTML="Re-type Password must be same as the password";
+				return false;
+			 }
+		}
+
+	</script>
+	<form name="form1" method="post" onsubmit="return myfun()">
+		<center>
+		<table>
+			<tr>
+			<td>Name:</td>
+			<td><input type="text" name="fname"><span id="three" style="color:red"></span></td>
+		    </tr>
+		    <tr>
+			<td>Password:</td>
+			<td><input type="password" name="password"> <span id="two" style="color:red"></span></td>
+		    </tr>
+		    <tr>
+			<td>Retype-Password:</td>
+			<td><input type="password" name="cpassword"><span id="one" style="color:red"></span></td>
+		    </tr>
+		 </table>
+		 <input type="submit" value="submit">
+		</center>
+	</form>
+</body>
+</html>
