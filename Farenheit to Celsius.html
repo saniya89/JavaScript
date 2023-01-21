@@ -1,0 +1,54 @@
+<html>
+<head>
+	<style>
+         body {
+                background-color: lightblue;
+              }
+         table
+         {
+         	border-color: lightcyan;
+         }
+    </style>
+	<script>
+	 function validate()
+	 {
+		var far=document.form1.fname.value;
+		if(far==""||far==null)
+		{
+			document.getElementById('three').innerHTML="Please Enter the Proper value";
+			return false;
+		}
+		else if (Number(far))
+		{
+			var celsius=(far-32)/1.8;
+			document.getElementById('one').value=celsius;
+			return false;
+		}
+		else
+		{
+			document.getElementById('two').innerHTML="Check the farenheit value";
+			return false;
+		}
+	}
+	</script>
+</head>
+	<body>
+		<form name="form1"  method="post">
+		<center>
+		<table border="3">
+		<tr>
+			<td><b>Enter the Farenheit number:</b>	</td>
+		    <td><input type="textbox" name="fname"><span id='three' style="color:red;"></td>
+		</tr>
+		<tr>
+		    <td><b>Converted Farenheit to Celsius:</b></td>
+		    <td><input type="textbox" name="ces" id="one"><span id="two" style="color:darkred;"></td>
+	    </tr>
+		<tr>
+		     <td colspan=2><center><input type="button" onclick=validate() value="click me"></center></td>
+		 </tr>
+	    </table>
+	    </center>
+		</form> 
+	</body>
+</html>
